@@ -84,7 +84,10 @@
     <!-- 声明需要暴露的服务接口
         dubbo是以接口来通信的 所以需要一个接口的全类名 加上接口的实现类
      -->
+    <!--商品服务-->
     <dubbo:service interface="com.taotao.service.ItemService" ref="itemServiceImpl" />
-
+    <!--商品分类服务-->
     <dubbo:service interface="com.taotao.service.ItemCatService" ref="itemCatServiceImpl" />
+    <!--商品图片服务-->
+    <dubbo:service interface="com.taotao.service.PictureService" ref="pictureServiceImpl" />
 </beans>
