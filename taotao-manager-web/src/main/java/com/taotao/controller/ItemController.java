@@ -34,4 +34,8 @@ public class ItemController {
         TaotaoResult result = itemService.deleteItems(ids);
         return result;
     }
+    @RequestMapping("/rest/page/item-edit/{ids}")
+    public void showUpdate(@PathVariable Integer ids){
+        System.out.println(ids);
+    }
 }

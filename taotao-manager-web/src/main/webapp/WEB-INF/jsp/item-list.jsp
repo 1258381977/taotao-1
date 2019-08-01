@@ -54,6 +54,9 @@
         		$.messager.alert('提示','只能选择一个商品!');
         		return ;
         	}
+
+
+
         	
         	$("#itemEditWindow").window({
         		onLoad :function(){
