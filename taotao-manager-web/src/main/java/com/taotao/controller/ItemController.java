@@ -1,6 +1,7 @@
 package com.taotao.controller;
 
 import com.taotao.common.pojo.EasyUIResult;
+import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.pojo.TbItem;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class ItemController {
     @ResponseBody
     public EasyUIResult getItemList(Integer page,Integer rows){
         EasyUIResult result = itemService.getItemList(page, rows);
+        return result;
+    }
+    @RequestMapping("/rest/item/delete")
+    @ResponseBody
+    public TaotaoResult deleteItem(Integer[] ids){
+        TaotaoResult result = itemService.deleteItems(ids);
         return result;
     }
 }

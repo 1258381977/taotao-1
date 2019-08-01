@@ -3,6 +3,7 @@ package com.taotao.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.taotao.common.pojo.EasyUIResult;
+import com.taotao.common.pojo.TaotaoResult;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.pojo.TbItem;
 import com.taotao.service.ItemService;
@@ -36,5 +37,14 @@ public class ItemServiceImpl implements ItemService {
         //被分页插件处理以后得到的结果集了集合对象
         result.setRows(items);
         return result;
+    }
+
+    @Override
+    public TaotaoResult deleteItems(Integer[] ids) {
+        int i = tbItemMapper.deleteItems(ids);
+        if (i != 0) {
+            return TaotaoResult.ok();
+        }
+        return null;
     }
 }
